@@ -7,14 +7,9 @@ session_start();
 
 echo checkForMessage();
 
-if (isset($_GET['loginMessage'])) {
-    if ($_GET['loginMessage'] == 'loggedOut') {
-        unset($_SESSION['loggedIn']);
-    }
-}
-
 if (isUserLoggedIn()) {
     header('Location: account.php');
+    exit;
 }
 
 ?>

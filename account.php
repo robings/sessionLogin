@@ -38,7 +38,7 @@ if (!isUserLoggedIn()) {
 
 <p>Congratulations you are logged in.</p>
 
-<form action='index.php?loginMessage=loggedOut' method='get'>
+<form action='logout.php' method='get'>
 
     <input type='submit' value='Log me out' />
 
