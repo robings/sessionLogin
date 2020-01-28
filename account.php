@@ -6,9 +6,7 @@ session_start();
 //define($THE_USERNAME, 'mmouse');
 //define($THE_PASSWORD, 'theHouse_of');
 
-if (!isUserLoggedIn()) {
-    //header('Location: index.php');
-}
+
 
 if (isset($_POST['username'])) {
     if (validateInput($_POST['username']) || validateInput($_POST['password'])) {
@@ -25,6 +23,11 @@ if (isset($_POST['username'])) {
         header('Location: index.php?loginMessage=credentials');
         exit;
     }
+}
+
+if (!isUserLoggedIn()) {
+    header('Location: index.php');
+    exit;
 }
 
 ?>
