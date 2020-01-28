@@ -5,15 +5,19 @@ function isUserLoggedIn() {
 }
 
 function checkUsername($username) {
-    //check if $username is correct
+  //check if username is correct
 }
 
 function checkPassword($password) {
     //check if password is correct
 }
 
-function validateUsername($username) {
-    //validation for username
+function validateInput($input): bool {
+    if (strpos($input, '!') || strpos($input, '&') || strpos($input, '<') || strpos($input, '>') || strpos($input, ' ')) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function validatePassword($password) {

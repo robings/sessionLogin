@@ -6,6 +6,12 @@ if (!isUserLoggedIn()) {
     //header('Location: index.php');
 }
 
+if (isset($_POST['username'])) {
+    if (validateInput($_POST['username']) || validateInput($_POST['password'])) {
+        header('Location: index.php?loginMessage=invalidInput');
+    }
+}
+
 ?>
 
 <html>
@@ -19,5 +25,7 @@ if (!isUserLoggedIn()) {
     <input type='submit' value='Log me out'/>
 
 </form>
+
+<a href='index.php'>index</a>
 
 </html>

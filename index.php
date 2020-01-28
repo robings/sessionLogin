@@ -3,10 +3,16 @@
 require_once ('functions.php');
 session_start();
 
+if (isset($_GET['loginMessage'])) {
+    if ($_GET['loginMessage'] == 'invalidInput') {
+        echo 'characters <, >, &, ! and spaces not allowed';
+    }
+}
+
 if (isUserLoggedIn()) {
     header('Location: account.php');
 } else {
-    echo 'not logged in';
+    echo '<br />not logged in';
 }
 
 ?>
