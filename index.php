@@ -1,7 +1,13 @@
 <?php
 
 require_once ('functions.php');
+session_start();
 
+if (isUserLoggedIn()) {
+    header('Location: account.php');
+} else {
+    echo 'not logged in';
+}
 
 ?>
 

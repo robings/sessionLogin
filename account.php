@@ -1,5 +1,10 @@
 <?php
  require_once ('functions.php');
+session_start();
+
+if (!isUserLoggedIn()) {
+    header('Location: index.php');
+}
 
 ?>
 
