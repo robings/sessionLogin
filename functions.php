@@ -8,6 +8,8 @@ function checkForMessage() {
     if (isset($_GET['loginMessage'])) {
         if ($_GET['loginMessage'] == 'invalidInput') {
             return 'characters <, >, &, ! and spaces not allowed';
+        } elseif ($_GET['loginMessage'] == 'credentials') {
+            return 'incorrect login credentials';
         }
     }
 }
@@ -22,7 +24,7 @@ function checkUsername($username): bool {
   }
 }
 
-function checkPassword($password) {
+function checkPassword($password): bool {
     if (isset($_POST['password'])) {
         if ($_POST['password'] == $password) {
             return true;
