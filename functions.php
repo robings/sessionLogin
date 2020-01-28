@@ -40,10 +40,13 @@ function validateInput($input): bool {
     }
 }
 
-function validatePassword($password) {
-    //validation for password
-}
+
 
 function setLoggedIn() {
     //if username and password checkout, set a flag for logged in the session
+}
+
+function logOut($location) {
+    session_abort();
+    header('Location: ' . $location);
 }

@@ -30,12 +30,13 @@ if (isset($_POST['username'])) {
 
 <p>Congratulations you are logged in.</p>
 
-<form action='account.php' method='post'>
+<form action='account.php' method='get'>
 
-    <input type='submit' value='Log me out'/>
+    <input type='submit' value='Log me out' />
 
 </form>
 
 <a href='index.php'>index</a>
+
 
 </html>
