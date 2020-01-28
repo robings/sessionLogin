@@ -27,4 +27,6 @@ if (isUserLoggedIn()) {
 
 </form>
 
+<a href='index.php'>Back to index.php without any message</a>
+
 </html>

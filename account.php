@@ -18,7 +18,6 @@ if (isset($_POST['username'])) {
 if (isset($_POST['username'])) {
     if (checkUsername('mmouse') AND checkPassword('theHouse_of')) {
         $_SESSION['loggedIn'] = true;
-        var_dump($_SESSION);
     } else {
         header('Location: index.php?loginMessage=credentials');
         exit;
