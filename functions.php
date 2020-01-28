@@ -4,6 +4,14 @@ function isUserLoggedIn() {
     return (isset($_SESSION['loggedIn']));
 }
 
+function checkForMessage() {
+    if (isset($_GET['loginMessage'])) {
+        if ($_GET['loginMessage'] == 'invalidInput') {
+            return 'characters <, >, &, ! and spaces not allowed';
+        }
+    }
+}
+
 function checkUsername($username) {
   //check if username is correct
 }
@@ -13,7 +21,7 @@ function checkPassword($password) {
 }
 
 function validateInput($input): bool {
-    if (strpos($input, '!') || strpos($input, '&') || strpos($input, '<') || strpos($input, '>') || strpos($input, ' ')) {
+    if ((strpos($input, '!') !== false) || (strpos($input, '&') !== false) || (strpos($input, '<') !== false) || (strpos($input, '>') !== false) || (strpos($input, ' ') !== false)) {
         return true;
     } else {
         return false;
