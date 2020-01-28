@@ -12,12 +12,24 @@ function checkForMessage() {
     }
 }
 
-function checkUsername($username) {
-  //check if username is correct
+function checkUsername($username): bool {
+  if (isset($_POST['username'])) {
+      if ($_POST['username'] == $username) {
+          return true;
+      } else {
+          return false;
+      }
+  }
 }
 
 function checkPassword($password) {
-    //check if password is correct
+    if (isset($_POST['password'])) {
+        if ($_POST['password'] == $password) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 function validateInput($input): bool {

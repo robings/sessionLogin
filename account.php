@@ -2,6 +2,10 @@
  require_once ('functions.php');
 session_start();
 
+//some information to do the exercise
+//define($THE_USERNAME, 'mmouse');
+//define($THE_PASSWORD, 'theHouse_of');
+
 if (!isUserLoggedIn()) {
     //header('Location: index.php');
 }
@@ -9,6 +13,12 @@ if (!isUserLoggedIn()) {
 if (isset($_POST['username'])) {
     if (validateInput($_POST['username']) || validateInput($_POST['password'])) {
         header('Location: index.php?loginMessage=invalidInput');
+    }
+}
+
+if (isset($_POST['username'])) {
+    if (checkUsername('mmouse') AND checkPassword('theHouse_of')) {
+        $_SESSION['loggedIn'] = true;
     }
 }
 
