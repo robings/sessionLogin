@@ -10,6 +10,8 @@ function checkForMessage() {
             return 'characters <, >, &, ! and spaces not allowed';
         } elseif ($_GET['loginMessage'] == 'credentials') {
             return 'incorrect login credentials';
+        } elseif ($_GET['loginMessage'] == 'loggedOut') {
+            return 'you are logged out';
         }
     }
 }
@@ -48,7 +50,12 @@ function setLoggedIn() {
     //if username and password checkout, set a flag for logged in the session
 }
 
-function logOut($location) {
+function logOut($location, $message = '') {
     session_abort();
-    header('Location: ' . $location);
+    if ($message != '') {
+        $message = '?' . $message;
+    }
+    $headerString = 'Location: ' . $location . $message;
+    header($headerString);
+    exit;
 }
