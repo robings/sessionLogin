@@ -7,8 +7,6 @@ echo checkForMessage();
 
 if (isUserLoggedIn()) {
     header('Location: account.php');
-} else {
-    echo '<br />not logged in';
 }
 
 ?>
