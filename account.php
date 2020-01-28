@@ -39,12 +39,7 @@ if (!isUserLoggedIn()) {
 <p>Congratulations you are logged in.</p>
 
 <form action='logout.php' method='get'>
-
     <input type='submit' value='Log me out' />
-
 </form>
-
-<a href='index.php'>index</a>
-
 
 </html>

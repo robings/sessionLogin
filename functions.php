@@ -11,7 +11,7 @@ function checkForMessage() {
         } elseif ($_GET['loginMessage'] == 'credentials') {
             return 'incorrect login credentials';
         } elseif ($_GET['loginMessage'] == 'loggedOut') {
-            return 'you are logged out';
+            return 'successfully logged out';
         }
     }
 }
@@ -51,10 +51,12 @@ function setLoggedIn() {
 }
 
 function logOut($location, $message = '') {
-    session_abort();
-    if ($message != '') {
+        if ($message != '') {
         $message = '?' . $message;
     }
+    unset($_SESSION['loggedIn']);
+    session_destroy();
+
     $headerString = 'Location: ' . $location . $message;
     header($headerString);
     exit;
